@@ -12,7 +12,7 @@
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
 ## Installasi Laravel & laravel-admin
-## Catatan *Jangan lupa nyalakan php dan mysql nya di xampp
+## Catatan *Jangan lupa nyalain php dan mysql nya di xampp
 1. git clone git@github.com:mYusufH882/direktori_peneliti.git
 2. composer-update
 3. buat database di phpmyadmin dengan nama "direktori_peneliti"
@@ -27,16 +27,16 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 10. Akses browser http://localhost:8000/admin
 
 ## Informasi Akun
-1. Admin
-   Username: admin
+1. Admin <br/>
+   Username: admin <br/>
    Password: admin
    
-2. Peneliti 1
-   Username: andre
+2. Peneliti 1 <br/>
+   Username: andre <br/>
    Password: 1234567890
    
-3. Peneliti 2
-   Username: yusuf
+3. Peneliti 2 <br/>
+   Username: yusuf <br/>
    Password: 0987654321
    
 ## License
