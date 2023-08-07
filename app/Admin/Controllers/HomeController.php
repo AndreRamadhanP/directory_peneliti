@@ -24,7 +24,7 @@ class HomeController extends Controller
                 if (Admin::user()->id == 1) {
                     $row->column(4, function (Column $column) {
                         $peneliti = Pengguna::where('id', '!=', 1)->get()->count();
-                        $box = new InfoBox('Jumlah Peneliti', 'users', 'primary', '', $peneliti);
+                        $box = new InfoBox('Jumlah Peneliti', 'users', 'primary', 'admin/auth/users', $peneliti);
                         $column->append($box);
                     });
                 }
@@ -32,7 +32,15 @@ class HomeController extends Controller
                 $row->column(4, function (Column $column) {
                     $jurnal = Admin::user()->isAdministrator() ? Direktori::get()->count() : Direktori::where('id_user', Admin::user()->id)->get()->count();
 
-                    $box = new InfoBox('Jumlah Jurnal', 'book', 'info', '', $jurnal);
+                    $box = new InfoBox('Jumlah Jurnal', 'book', 'info', 'admin/direktori', $jurnal);
+                    $column->append($box);
+                });
+
+                $row->column(4, function (Column $column) {
+                    $anggaran = Admin::user()->isAdministrator() ? Direktori::sum('anggaran') : Direktori::where('id_user', Admin::user()->id)->sum('anggaran');
+                    $format = "Rp. " . number_format($anggaran, 2, ',', '.');
+
+                    $box = new InfoBox('Jumlah Anggaran', 'dollar', 'success', 'admin/direktori', $format);
                     $column->append($box);
                 });
             });
