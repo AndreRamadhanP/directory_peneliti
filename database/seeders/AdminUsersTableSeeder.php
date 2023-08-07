@@ -26,7 +26,7 @@ class AdminUsersTableSeeder extends Seeder
                 'password' => '$2y$10$88/KVpyG1PbPaVnNKQ8cWeDQkUzVBd..KglIMEyj5eqqaCLvRIdGC',
                 'name' => 'Administrator',
                 'avatar' => NULL,
-                'remember_token' => 'UCDWd1dS4joW9c64Qsc0V8hvpqwKIHPZDyJpWv1t8pqyYMUYcRNIYdHxVha7',
+                'remember_token' => 'T8tXmTsBuaBxrQKmOQ5vyNrMJ3dIxPnaOMoak5XbzGcww5dMApcKNiqmRQd4',
                 'created_at' => '2023-08-06 14:23:32',
                 'updated_at' => '2023-08-06 14:23:32',
             ),
@@ -46,11 +46,11 @@ class AdminUsersTableSeeder extends Seeder
                 'id' => 3,
                 'username' => 'yusuf',
                 'password' => '$2y$10$DlqqE66fzhiJP8xBxtXHFuRXmLQeYr3wjm3LU3X5w0YzKYI71K7IG',
-                'name' => 'Yusuf.',
+                'name' => 'Yusuf',
                 'avatar' => NULL,
-                'remember_token' => 'pPqscyfaXc8Bg2Q3Q4sYIsdJ5W7tUGw7PwL10H9Auv65Bcr5pf8hFb2jc7DM',
+                'remember_token' => 'd8hhfVxU5KO17MMyRnayBLSOkgsiDMBbL7FiJDNQxPHGm39gnUmP8ztQRQ6S',
                 'created_at' => '2023-08-07 14:17:32',
-                'updated_at' => '2023-08-07 14:29:10',
+                'updated_at' => '2023-08-07 15:13:44',
             ),
         ));
         

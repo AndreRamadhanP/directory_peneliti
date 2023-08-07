@@ -48,12 +48,12 @@ class AdminMenuTableSeeder extends Seeder
                 'id' => 3,
                 'parent_id' => 2,
                 'order' => 4,
-                'title' => 'Pengguna',
+                'title' => 'Peneliti',
                 'icon' => 'fa-users',
                 'uri' => 'auth/users',
                 'permission' => NULL,
                 'created_at' => NULL,
-                'updated_at' => '2023-08-07 14:24:11',
+                'updated_at' => '2023-08-07 15:17:57',
             ),
             3 => 
             array (
