@@ -3,7 +3,9 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Direktori;
+use App\Models\Pengguna;
 use Encore\Admin\Controllers\AdminController;
+use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
@@ -30,8 +32,20 @@ class DirektoriPenelitianController extends AdminController
         $grid->column('judul_jurnal', __('Judul jurnal'));
         $grid->column('tahun_terbit', __('Tahun terbit'));
         $grid->column('anggaran', __('Anggaran'));
-        $grid->column('created_at', __('Dibuat Pada'));
-        $grid->column('updated_at', __('Diubah Pada'));
+        $grid->column('created_at', __('Dibuat Pada'))->display(function ($create) {
+            return \Carbon\Carbon::parse($create)->translatedFormat('l, d F Y');
+        });
+        $grid->column('updated_at', __('Diubah Pada'))->display(function ($update) {
+            return \Carbon\Carbon::parse($update)->translatedFormat('l, d F Y');
+        });
+
+        if (Admin::user()->id == 1) {
+            $grid->disableCreateButton();
+
+            $grid->actions(function ($actions) {
+                $actions->disableDelete();
+            });
+        }
 
         $grid->filter(function ($filter) {
             $filter->disableIdFilter();
@@ -74,12 +88,12 @@ class DirektoriPenelitianController extends AdminController
     {
         $form = new Form(new Direktori());
 
-        $form->number('id_user', __('Id user'));
+        $form->hidden('id_user', __('ID User'))->value(Admin::user()->id);
         $form->text('nama', __('Nama'));
         $form->text('judul_jurnal', __('Judul jurnal'));
         $form->number('tahun_terbit', __('Tahun terbit'));
         $form->file('file', __('File'));
-        $form->decimal('anggaran', __('Anggaran'));
+        $form->currency('anggaran', __('Anggaran'));
 
         return $form;
     }
