@@ -1,0 +1,7 @@
+Role aplikasi:
+1. Admin => mengelola peneliti, mereview & ubah jurnal, meninjau kas anggaran
+2. Perusahaan => mengelola anggaran, verifikasi anggaran jurnal
+3. Peneliti => mengelola jurnal
+
+Catatan:
+-> Fitur notifikasi pada saat verifikasi jurnal baik diterima atau tidak melalui email/wa.

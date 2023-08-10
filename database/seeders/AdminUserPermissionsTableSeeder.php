@@ -117,6 +117,55 @@ class AdminUserPermissionsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            14 => 
+            array (
+                'user_id' => 2,
+                'permission_id' => 10,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            15 => 
+            array (
+                'user_id' => 2,
+                'permission_id' => 11,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            16 => 
+            array (
+                'user_id' => 2,
+                'permission_id' => 12,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            17 => 
+            array (
+                'user_id' => 2,
+                'permission_id' => 13,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            18 => 
+            array (
+                'user_id' => 2,
+                'permission_id' => 14,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            19 => 
+            array (
+                'user_id' => 2,
+                'permission_id' => 15,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            20 => 
+            array (
+                'user_id' => 3,
+                'permission_id' => 15,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

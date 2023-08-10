@@ -38,6 +38,7 @@ class DirektoriPenelitianController extends AdminController
         $grid->column('anggaran', __('Anggaran'))->display(function ($rp) {
             return "Rp. " . number_format($rp, 2, ',', '.');
         });
+        $grid->column('progress')->progressBar();
         $grid->column('created_at', __('Dibuat Pada'))->display(function ($create) {
             return \Carbon\Carbon::parse($create)->translatedFormat('l, d F Y');
         });
@@ -104,6 +105,7 @@ class DirektoriPenelitianController extends AdminController
         $form->text('judul_jurnal', __('Judul jurnal'));
         $form->number('tahun_terbit', __('Tahun terbit'));
         $form->file('file', __('File'));
+        $form->slider('progress', __('Progress Kerja'))->options(['max' => 100, 'min' => 1, 'step' => 1, 'postfix' => 'progress']);
         $form->currency('anggaran', __('Anggaran'));
 
         return $form;

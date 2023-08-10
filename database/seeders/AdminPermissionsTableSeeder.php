@@ -108,10 +108,10 @@ class AdminPermissionsTableSeeder extends Seeder
                 'id' => 12,
                 'name' => 'Edit Direktori',
                 'slug' => 'edit.direktori',
-                'http_method' => 'PUT,PATCH',
+                'http_method' => 'GET',
                 'http_path' => '/direktori/*/edit',
                 'created_at' => '2023-08-07 10:07:25',
-                'updated_at' => '2023-08-07 10:07:25',
+                'updated_at' => '2023-08-11 00:03:44',
             ),
             9 => 
             array (
@@ -132,6 +132,16 @@ class AdminPermissionsTableSeeder extends Seeder
                 'http_path' => '/direktori',
                 'created_at' => '2023-08-07 10:12:40',
                 'updated_at' => '2023-08-07 10:12:40',
+            ),
+            11 => 
+            array (
+                'id' => 15,
+                'name' => 'Update Direktori',
+                'slug' => 'update.direktori',
+                'http_method' => 'PUT,PATCH',
+                'http_path' => '/direktori/*',
+                'created_at' => '2023-08-11 00:03:14',
+                'updated_at' => '2023-08-11 00:03:14',
             ),
         ));
         

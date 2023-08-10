@@ -117,6 +117,20 @@ class AdminRolePermissionsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            14 => 
+            array (
+                'role_id' => 1,
+                'permission_id' => 15,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            15 => 
+            array (
+                'role_id' => 2,
+                'permission_id' => 15,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         
