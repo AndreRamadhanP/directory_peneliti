@@ -52,25 +52,25 @@ class HomeController extends Controller
                     $column->append($box);
                 });
 
-                if (Admin::user()->isRole('perusahaan')) {
-                    $row->column(4, function (Column $column) {
-                        $total = Anggaran::where('created_by', Admin::user()->id)->first()->total_anggaran;
-                        $total = "Rp. " . number_format($total, 2, ',', '.');
+                // if (Admin::user()->isRole('perusahaan')) {
+                //     $row->column(4, function (Column $column) {
+                //         $total = Anggaran::where('created_by', Admin::user()->id)->first()->total_anggaran;
+                //         $total = "Rp. " . number_format($total, 2, ',', '.');
 
-                        $box = new InfoBox('Jumlah Anggaran', 'money', 'primary', 'admin/anggaran', $total);
+                //         $box = new InfoBox('Jumlah Anggaran', 'money', 'primary', 'admin/anggaran', $total);
 
-                        $column->append($box);
-                    });
+                //         $column->append($box);
+                //     });
 
-                    $row->column(4, function (Column $column) {
-                        $sisa = Anggaran::where('created_by', Admin::user()->id)->first()->sisa_anggaran;
-                        $sisa = "Rp. " . number_format($sisa, 2, ',', '.');
+                //     $row->column(4, function (Column $column) {
+                //         $sisa = Anggaran::where('created_by', Admin::user()->id)->first()->sisa_anggaran;
+                //         $sisa = "Rp. " . number_format($sisa, 2, ',', '.');
 
-                        $box = new InfoBox('Jumlah Anggaran', 'money', 'danger', 'admin/anggaran', $sisa);
+                //         $box = new InfoBox('Jumlah Anggaran', 'money', 'danger', 'admin/anggaran', $sisa);
 
-                        $column->append($box);
-                    });
-                }
+                //         $column->append($box);
+                //     });
+                // }
             });
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Actions\VerifikasiJurnal;
 use App\Models\Pengajuan;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Facades\Admin;
@@ -27,10 +28,12 @@ class PengajuanController extends AdminController
     {
         $grid = new Grid(new Pengajuan());
 
-        $grid->column('id_direktori', __('Direktori'));
-        $grid->column('id_peneliti', __('Peneliti'));
-        $grid->column('status_pengajuan', __('Status pengajuan'));
-        $grid->column('biaya_pengajuan', __('Biaya pengajuan'));
+        $grid->column('direktori.judul_jurnal', __('Direktori'));
+        $grid->column('peneliti.name', __('Peneliti'));
+        $grid->column('status_pengajuan', __('Status pengajuan'))->action(VerifikasiJurnal::class);
+        $grid->column('biaya_pengajuan', __('Biaya pengajuan'))->display(function ($biaya) {
+            return "Rp. " . number_format($biaya, 2, ',', '.');
+        });
         $grid->column('tanggal_pengajuan', __('Tanggal pengajuan'))->display(function ($tgl) {
             return \Carbon\Carbon::parse($tgl)->translatedFormat('l, d F Y');
         });

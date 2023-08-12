@@ -2,6 +2,8 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Actions\AjuanJurnal;
+use App\Admin\Actions\VerifikasiJurnal;
 use App\Models\Direktori;
 use App\Models\Pengguna;
 use Encore\Admin\Controllers\AdminController;
@@ -43,12 +45,29 @@ class DirektoriPenelitianController extends AdminController
             return "Rp. " . number_format($rp, 2, ',', '.');
         });
         $grid->column('progress')->progressBar();
+
+        if (Admin::user()->isRole('peneliti')) {
+            $grid->column('status_ajuan')->action(AjuanJurnal::class);
+        } else if (Admin::user()->isRole('perusahaan')) {
+            $grid->column('status_ajuan')->display(function ($ajuan) {
+                if ($ajuan == 0) {
+                    return "<span class='label label-sm label-warning'>Belum Diajukan</span>";
+                } else if ($ajuan == 1) {
+                    return "<span class='label label-sm label-info'>Diajukan</span>";
+                } else if ($ajuan == 2) {
+                    return "<span class='label label-sm label-success'>Diterima</span>";
+                } else if ($ajuan == 3) {
+                    return "<span class='label label-sm label-danger'>Ditolak</span>";
+                }
+            });
+        }
+
         $grid->column('created_at', __('Dibuat Pada'))->display(function ($create) {
             return \Carbon\Carbon::parse($create)->translatedFormat('l, d F Y');
         });
-        // $grid->column('updated_at', __('Diubah Pada'))->display(function ($update) {
-        //     return \Carbon\Carbon::parse($update)->translatedFormat('l, d F Y');
-        // });
+        $grid->column('updated_at', __('Diubah Pada'))->display(function ($update) {
+            return \Carbon\Carbon::parse($update)->translatedFormat('l, d F Y');
+        });
 
         if (Admin::user()->isRole('perusahaan')) {
             $grid->disableCreateButton();

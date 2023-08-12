@@ -6,4 +6,4 @@ Role aplikasi:
 Catatan:
 -> Fitur notifikasi pada saat verifikasi jurnal baik diterima atau tidak melalui email/wa.
 -> Perusahaan dapat melihat peneliti 
--> Buat aksi pengajuan
+-> Buat aksi pengajuan (Tinggal proses konfirmasi & perhitungan anggaran)
