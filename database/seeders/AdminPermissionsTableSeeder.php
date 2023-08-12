@@ -143,6 +143,36 @@ class AdminPermissionsTableSeeder extends Seeder
                 'created_at' => '2023-08-11 00:03:14',
                 'updated_at' => '2023-08-11 00:03:14',
             ),
+            12 => 
+            array (
+                'id' => 16,
+                'name' => 'Pengajuan CRUD',
+                'slug' => 'all.pengajuan',
+                'http_method' => '',
+                'http_path' => '/pengajuan*',
+                'created_at' => '2023-08-12 09:27:42',
+                'updated_at' => '2023-08-12 10:15:23',
+            ),
+            13 => 
+            array (
+                'id' => 17,
+                'name' => 'Anggaran CRUD',
+                'slug' => 'all.anggaran',
+                'http_method' => '',
+                'http_path' => '/anggaran*',
+                'created_at' => '2023-08-12 09:28:05',
+                'updated_at' => '2023-08-12 10:15:32',
+            ),
+            14 => 
+            array (
+                'id' => 18,
+                'name' => 'Perusahaan CRUD',
+                'slug' => 'all.perusahaan',
+                'http_method' => '',
+                'http_path' => '/perusahaan*',
+                'created_at' => '2023-08-12 10:15:13',
+                'updated_at' => '2023-08-12 10:16:12',
+            ),
         ));
         
         

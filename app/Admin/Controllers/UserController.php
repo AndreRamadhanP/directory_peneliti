@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Pengguna;
+use App\Models\Perusahaan;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -37,6 +38,7 @@ class UserController extends AdminController
         $grid->column('username', trans('admin.username'))->display(function () {
             return "<b>" . $this->name . "</b> <br/> <p>(" . $this->username . ")</p>";
         });
+        $grid->column('perusahaan.nama_perusahaan', __('Nama Perusahaan'));
         $grid->column('peneliti.jenis_kelamin', __('Jenis Kelamin'));
         $grid->column('peneliti.alamat', __('Alamat'));
         $grid->column('roles', __('Hak Akses'))->pluck('name')->label();
@@ -84,6 +86,8 @@ class UserController extends AdminController
 
         $show->field('username', trans('admin.username'));
         $show->field('name', trans('admin.name'));
+        $show->field('perusahaan.nama_perusahaan', __('Perusahaan'));
+        $show->field('perusahaan.nama_direktur', __('Nama Direktur'));
         $show->field('peneliti.jenis_kelamin', __('Jenis Kelamin'));
         $show->field('peneliti.alamat', __('Alamat'));
         $show->field('roles', trans('admin.roles'))->as(function ($roles) {
@@ -121,6 +125,7 @@ class UserController extends AdminController
             ->updateRules(['required', "unique:{$connection}.{$userTable},username,{{id}}"]);
 
         $form->text('name', trans('admin.name'))->rules('required');
+        $form->select('id_perusahaan', __('Pilih Perusahaan'))->options(Perusahaan::pluck('nama_perusahaan', 'id'));
         $form->select('peneliti.jenis_kelamin', __('Jenis Kelamin'))->options(['Pria' => 'Pria', 'Wanita' => 'Wanita']);
         $form->textarea('peneliti.alamat', __('Alamat'));
         $form->image('avatar', trans('admin.avatar'));

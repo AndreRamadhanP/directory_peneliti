@@ -28,8 +28,12 @@ class DirektoriPenelitianController extends AdminController
     {
         $grid = new Grid(new Direktori());
 
-        if (!Admin::user()->isAdministrator()) {
+        if (Admin::user()->isRole('peneliti')) {
             $grid->model()->where('id_user', Admin::user()->id);
+        } else if (Admin::user()->isRole('perusahaan')) {
+            $grid->model()->whereHas('pengguna', function ($perusahaan) {
+                $perusahaan->where('id_perusahaan', Admin::user()->id_perusahaan);
+            });
         }
 
         $grid->column('nama', __('Nama'));
@@ -46,11 +50,20 @@ class DirektoriPenelitianController extends AdminController
         //     return \Carbon\Carbon::parse($update)->translatedFormat('l, d F Y');
         // });
 
-        if (Admin::user()->id == 1) {
+        if (Admin::user()->isRole('perusahaan')) {
             $grid->disableCreateButton();
 
-            $grid->actions(function ($actions) {
-                $actions->disableDelete();
+            $grid->actions(function ($action) {
+                $action->disableDelete();
+            });
+        }
+
+        if (Admin::user()->isAdministrator()) {
+            $grid->disableCreateButton();
+
+            $grid->actions(function ($action) {
+                $action->disableEdit();
+                $action->disableDelete();
             });
         }
 
@@ -88,6 +101,21 @@ class DirektoriPenelitianController extends AdminController
             return \Carbon\Carbon::parse($diubah)->translatedFormat('l, d F Y');
         });
 
+        if (Admin::user()->isAdministrator()) {
+            $show->panel()
+                ->tools(function ($tools) {
+                    $tools->disableEdit();
+                    $tools->disableDelete();
+                });
+        }
+
+        if (Admin::user()->isRole('perusahaan')) {
+            $show->panel()
+                ->tools(function ($tools) {
+                    $tools->disableDelete();
+                });
+        }
+
         return $show;
     }
 
@@ -107,6 +135,12 @@ class DirektoriPenelitianController extends AdminController
         $form->file('file', __('File'));
         $form->slider('progress', __('Progress Kerja'))->options(['max' => 100, 'min' => 1, 'step' => 1, 'postfix' => 'progress']);
         $form->currency('anggaran', __('Anggaran'));
+
+        if (Admin::user()->isAdministrator() || Admin::user()->isRole('perusahaan')) {
+            $form->tools(function ($tools) {
+                $tools->disableDelete();
+            });
+        }
 
         return $form;
     }

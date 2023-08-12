@@ -56,78 +56,120 @@ class AdminRolePermissionsTableSeeder extends Seeder
             ),
             5 => 
             array (
-                'role_id' => 1,
+                'role_id' => 2,
                 'permission_id' => 9,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             6 => 
             array (
-                'role_id' => 1,
-                'permission_id' => 11,
+                'role_id' => 2,
+                'permission_id' => 10,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             7 => 
             array (
-                'role_id' => 1,
-                'permission_id' => 12,
+                'role_id' => 2,
+                'permission_id' => 11,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             8 => 
             array (
                 'role_id' => 2,
-                'permission_id' => 9,
+                'permission_id' => 12,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             9 => 
             array (
                 'role_id' => 2,
-                'permission_id' => 10,
+                'permission_id' => 13,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             10 => 
             array (
                 'role_id' => 2,
-                'permission_id' => 11,
+                'permission_id' => 14,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             11 => 
             array (
                 'role_id' => 2,
-                'permission_id' => 12,
+                'permission_id' => 15,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             12 => 
             array (
-                'role_id' => 2,
-                'permission_id' => 13,
+                'role_id' => 3,
+                'permission_id' => 2,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             13 => 
             array (
-                'role_id' => 2,
-                'permission_id' => 14,
+                'role_id' => 3,
+                'permission_id' => 3,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             14 => 
             array (
-                'role_id' => 1,
-                'permission_id' => 15,
+                'role_id' => 3,
+                'permission_id' => 4,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             15 => 
             array (
-                'role_id' => 2,
+                'role_id' => 3,
+                'permission_id' => 5,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            16 => 
+            array (
+                'role_id' => 3,
+                'permission_id' => 16,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            17 => 
+            array (
+                'role_id' => 3,
+                'permission_id' => 17,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            18 => 
+            array (
+                'role_id' => 3,
+                'permission_id' => 12,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            19 => 
+            array (
+                'role_id' => 3,
                 'permission_id' => 15,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            20 => 
+            array (
+                'role_id' => 3,
+                'permission_id' => 11,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            21 => 
+            array (
+                'role_id' => 3,
+                'permission_id' => 9,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),

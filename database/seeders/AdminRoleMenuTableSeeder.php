@@ -35,8 +35,29 @@ class AdminRoleMenuTableSeeder extends Seeder
             ),
             2 => 
             array (
-                'role_id' => 1,
+                'role_id' => 3,
+                'menu_id' => 10,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            3 => 
+            array (
+                'role_id' => 3,
+                'menu_id' => 11,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            4 => 
+            array (
+                'role_id' => 3,
                 'menu_id' => 9,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            5 => 
+            array (
+                'role_id' => 1,
+                'menu_id' => 12,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),

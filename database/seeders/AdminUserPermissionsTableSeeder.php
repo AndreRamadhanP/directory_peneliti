@@ -166,6 +166,132 @@ class AdminUserPermissionsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            21 => 
+            array (
+                'user_id' => 4,
+                'permission_id' => 2,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            22 => 
+            array (
+                'user_id' => 4,
+                'permission_id' => 3,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            23 => 
+            array (
+                'user_id' => 4,
+                'permission_id' => 4,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            24 => 
+            array (
+                'user_id' => 4,
+                'permission_id' => 5,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            25 => 
+            array (
+                'user_id' => 4,
+                'permission_id' => 9,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            26 => 
+            array (
+                'user_id' => 4,
+                'permission_id' => 11,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            27 => 
+            array (
+                'user_id' => 4,
+                'permission_id' => 12,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            28 => 
+            array (
+                'user_id' => 4,
+                'permission_id' => 15,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            29 => 
+            array (
+                'user_id' => 4,
+                'permission_id' => 16,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            30 => 
+            array (
+                'user_id' => 4,
+                'permission_id' => 17,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            31 => 
+            array (
+                'user_id' => 5,
+                'permission_id' => 2,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            32 => 
+            array (
+                'user_id' => 5,
+                'permission_id' => 3,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            33 => 
+            array (
+                'user_id' => 5,
+                'permission_id' => 4,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            34 => 
+            array (
+                'user_id' => 5,
+                'permission_id' => 5,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            35 => 
+            array (
+                'user_id' => 5,
+                'permission_id' => 9,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            36 => 
+            array (
+                'user_id' => 5,
+                'permission_id' => 11,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            37 => 
+            array (
+                'user_id' => 5,
+                'permission_id' => 16,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            38 => 
+            array (
+                'user_id' => 5,
+                'permission_id' => 17,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

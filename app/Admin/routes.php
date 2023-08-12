@@ -13,5 +13,8 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
 
+    $router->resource('perusahaan', PerusahaanController::class);
     $router->resource('direktori', DirektoriPenelitianController::class);
+    $router->resource('anggaran', AnggaranController::class);
+    $router->resource('pengajuan', PengajuanController::class);
 });

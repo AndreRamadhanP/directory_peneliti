@@ -27,7 +27,7 @@ class Pengguna extends Model
     /**
      * @var array
      */
-    protected $fillable = ['username', 'password', 'name', 'avatar', 'remember_token', 'created_at', 'updated_at'];
+    protected $fillable = ['id_perusahaan', 'username', 'password', 'name', 'avatar', 'remember_token', 'created_at', 'updated_at'];
 
     public function roles(): BelongsToMany
     {
@@ -50,5 +50,10 @@ class Pengguna extends Model
     public function peneliti()
     {
         return $this->hasOne(Peneliti::class, 'id_user', 'id');
+    }
+
+    public function perusahaan()
+    {
+        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id');
     }
 }
