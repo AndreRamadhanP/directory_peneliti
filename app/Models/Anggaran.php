@@ -31,10 +31,15 @@ class Anggaran extends Model
     /**
      * @var array
      */
-    protected $fillable = ['created_by', 'total_anggaran', 'sisa_anggaran', 'created_at', 'updated_at'];
+    protected $fillable = ['created_by', 'id_perusahaan', 'total_anggaran', 'sisa_anggaran', 'created_at', 'updated_at'];
 
     public function user()
     {
         return $this->belongsTo(Pengguna::class, 'created_by', 'id');
+    }
+
+    public function perusahaan()
+    {
+        return $this->belongsTo(Perusahaan::class, 'id_perusahaan', 'id');
     }
 }

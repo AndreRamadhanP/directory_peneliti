@@ -30,7 +30,9 @@ class PengajuanController extends AdminController
 
         $grid->column('direktori.judul_jurnal', __('Direktori'));
         $grid->column('peneliti.name', __('Peneliti'));
-        $grid->column('status_pengajuan', __('Status pengajuan'))->action(VerifikasiJurnal::class);
+        if (Admin::user()->isRole('perusahaan')) {
+            $grid->column('status_pengajuan', __('Status pengajuan'))->action(VerifikasiJurnal::class);
+        }
         $grid->column('biaya_pengajuan', __('Biaya pengajuan'))->display(function ($biaya) {
             return "Rp. " . number_format($biaya, 2, ',', '.');
         });

@@ -5,6 +5,7 @@ namespace App\Admin\Actions;
 use App\Models\Direktori;
 use App\Models\Pengajuan;
 use Encore\Admin\Actions\RowAction;
+use Encore\Admin\Facades\Admin;
 use Illuminate\Database\Eloquent\Model;
 
 class AjuanJurnal extends RowAction
@@ -32,24 +33,29 @@ class AjuanJurnal extends RowAction
 
         if ($model->status_ajuan == 0) {
             $model->status_ajuan = 1;
+            $model->save();
 
-            $pengajuan->id_direktori = $model->id;
-            $pengajuan->id_peneliti = $model->id_user;
-            $pengajuan->status_pengajuan = 1;
-            $pengajuan->biaya_pengajuan = $model->anggaran;
-            $pengajuan->tanggal_pengajuan = now();
-            $pengajuan->save();
+            $data = [
+                "id_direktori" => $model->id,
+                "id_peneliti" => Admin::user()->id,
+                "status_pengajuan" => 1,
+                "biaya_pengajuan" => $model->anggaran,
+                "tanggal_pengajuan" => now()
+            ];
+
+            $pengajuan->create($data);
         } else if ($model->status_ajuan == 1) {
             $model->status_ajuan = 0;
+            $model->save();
 
             $pengajuan->where(['id_peneliti' => $model->id_user])->delete();
         } else if ($model->status_ajuan == 2) {
             $model->status_ajuan = 2;
+            $model->save();
         } else {
             $model->status_ajuan = 3;
+            $model->save();
         }
-
-        $model->save();
 
         return $this->response()->success('Jurnal ' . $model->judul_jurnal . ' Berhasil diajukan!!!')->refresh();
     }

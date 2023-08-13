@@ -154,6 +154,7 @@ class DirektoriPenelitianController extends AdminController
         $form->file('file', __('File'));
         $form->slider('progress', __('Progress Kerja'))->options(['max' => 100, 'min' => 1, 'step' => 1, 'postfix' => 'progress']);
         $form->currency('anggaran', __('Anggaran'));
+        $form->hidden('status_ajuan', ('Status Ajuan'))->default(0);
 
         if (Admin::user()->isAdministrator() || Admin::user()->isRole('perusahaan')) {
             $form->tools(function ($tools) {

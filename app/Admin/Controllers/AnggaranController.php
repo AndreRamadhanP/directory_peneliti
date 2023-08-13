@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Anggaran;
+use App\Models\Perusahaan;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;
@@ -28,7 +29,10 @@ class AnggaranController extends AdminController
         $anggaran = new Anggaran();
         $grid = new Grid($anggaran);
 
-        $grid->column('user.name', __('Pembuat'));
+        if (Admin::user()->isRole('perusahaan')) {
+            $grid->model()->where('created_by', Admin::user()->id);
+        }
+
         $grid->column('total_anggaran', __('Total anggaran'))->display(function ($rp) {
             return "Rp. " . number_format($rp, 2, ',', '.');
         });
@@ -36,11 +40,14 @@ class AnggaranController extends AdminController
             return "Rp. " . number_format($rp, 2, ',', '.');
         });
 
-        if ($anggaran->get()->count() > 0) {
-            $grid->disableCreateButton();
-        }
+        // if ($anggaran->get()->count() > 0) {
+        //     $grid->disableCreateButton();
+        // }
 
         if (Admin::user()->isAdministrator()) {
+            $grid->column('user.name', __('Pembuat'));
+            $grid->column('perusahaan.nama_perusahaan', __('Nama Perusahaan'));
+
             $grid->disableCreateButton();
 
             $grid->actions(function ($actions) {
@@ -91,6 +98,7 @@ class AnggaranController extends AdminController
         $form->hidden('created_by', __('Created by'))->default(Admin::user()->id);
         $form->currency('total_anggaran', __('Total anggaran'));
         $form->hidden('sisa_anggaran', __('Sisa anggaran'))->default(0);
+        $form->hidden('id_perusahaan', __('Perusahaan'))->default(Admin::user()->id_perusahaan);
 
         if ($form->isCreating() || $form->isEditing()) {
             $form->saving(function (Form $form) {
