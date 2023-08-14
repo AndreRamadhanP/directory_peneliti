@@ -4,6 +4,4 @@ Role aplikasi:
 3. Peneliti => mengelola jurnal
 
 Catatan:
--> Fitur notifikasi pada saat verifikasi jurnal baik diterima atau tidak melalui email/wa.
--> Perusahaan dapat melihat peneliti 
--> Buat aksi pengajuan (Tinggal proses perhitungan anggaran)
+-> Buat fitur notifikasi saat jurnal disetujui dengan keterangan anggaran yang diajukan melalui email dan fitur notifications.

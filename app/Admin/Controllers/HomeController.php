@@ -57,16 +57,16 @@ class HomeController extends Controller
                         $total = (Anggaran::where('created_by', Admin::user()->id)->first()) ? Anggaran::where('created_by', Admin::user()->id)->first()->total_anggaran : 0;
                         $total = "Rp. " . number_format($total, 2, ',', '.');
 
-                        $box = new InfoBox('Jumlah Total Anggaran', 'money', 'primary', 'admin/anggaran', $total);
+                        $box = new InfoBox('Jumlah Total Anggaran Perusahaan', 'money', 'primary', 'admin/anggaran', $total);
 
                         $column->append($box);
                     });
 
                     $row->column(4, function (Column $column) {
-                        $sisa = Anggaran::where('created_by', Admin::user()->id)->first()->sisa_anggaran;
+                        $sisa = (Anggaran::where('created_by', Admin::user()->id)->first()) ? Anggaran::where('created_by', Admin::user()->id)->first()->sisa_anggaran : 0;
                         $sisa = "Rp. " . number_format($sisa, 2, ',', '.');
 
-                        $box = new InfoBox('Jumlah Sisa Anggaran', 'money', 'danger', 'admin/anggaran', $sisa);
+                        $box = new InfoBox('Jumlah Sisa Anggaran Perusahaan', 'money', 'danger', 'admin/anggaran', $sisa);
 
                         $column->append($box);
                     });
